@@ -145,7 +145,7 @@
                             <input type="text" class="form-control" id="exampleInput4">
                         </div>
                     </div>
-                    <!-- <div class="row">
+                    <div class="row">
                         <div class="col-md-4">
                             <label for="exampleInput3" class="form-label">外注先4</label>
                             <input type="text" class="form-control" id="exampleInput3">
@@ -158,7 +158,7 @@
                             <label for="exampleInput4" class="form-label">外注先4納期</label>
                             <input type="text" class="form-control" id="exampleInput4">
                         </div>
-                    </div> -->
+                    </div>
                     <!-- More inputs as needed -->
                 </form>
             </div>
