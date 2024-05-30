@@ -30,11 +30,15 @@
                 <!-- Content for Tab 1 -->
                 <form>
                     <div class="row">
+                    <div class="col-md-1">
+                            <label for="exampleInput1" class="form-label">データNo</label>
+                            <input type="text" class="form-control" id="exampleInput1">
+                        </div>
                         <div class="col-md-2">
                             <label for="exampleInput1" class="form-label">日付</label>
                             <input type="text" class="form-control" id="exampleInput1">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <label for="exampleInput2" class="form-label">製品コード</label>
                             <input type="text" class="form-control" id="exampleInput2">
                         </div>
