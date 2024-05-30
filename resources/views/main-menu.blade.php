@@ -29,11 +29,11 @@
             <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
                 <!-- Content for Tab 1 -->
                 <form>
-                    <div class="row">
-                    <div class="col-md-1">
+                        <div class="col-md-2">
                             <label for="exampleInput1" class="form-label">データNo</label>
                             <input type="text" class="form-control" id="exampleInput1">
                         </div>
+                    <div class="row">
                         <div class="col-md-2">
                             <label for="exampleInput1" class="form-label">日付</label>
                             <input type="text" class="form-control" id="exampleInput1">
@@ -71,16 +71,17 @@
             <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
                 <!-- Content for Tab 2 -->
                 <form>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label for="exampleInput1" class="form-label">データNo.</label>
+                    <div class="col-md-2">
+                            <label for="exampleInput1" class="form-label">データNo</label>
                             <input type="text" class="form-control" id="exampleInput1">
                         </div>
-                        <div class="col-md-4">
+ 
+                    <div class="row">
+                        <div class="col-md-2">
                             <label for="exampleInput2" class="form-label">材料発注日</label>
                             <input type="text" class="form-control" id="exampleInput2">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-2">
                             <label for="exampleInput3" class="form-label">発注数量</label>
                             <input type="text" class="form-control" id="exampleInput2">
                         </div>
@@ -107,6 +108,10 @@
             <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
                 <!-- Content for Tab 2 -->
                 <form>
+                        <div class="col-md-2">
+                            <label for="exampleInput1" class="form-label">データNo</label>
+                            <input type="text" class="form-control" id="exampleInput1">
+                        </div>
                     <div class="row">
                         <div class="col-md-4">
                             <label for="exampleInput3" class="form-label">外注先1</label>
@@ -166,9 +171,14 @@
                     <!-- More inputs as needed -->
                 </form>
             </div>
-            <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+            <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
                 <!-- Content for Tab 2 -->
                 <form>
+                        <div class="col-md-2">
+                            <label for="exampleInput1" class="form-label">データNo</label>
+                            <input type="text" class="form-control" id="exampleInput1">
+                        </div>
+
                     <div class="mb-3">
                         <label for="exampleInput3" class="form-label">Example input 7</label>
                         <input type="text" class="form-control" id="exampleInput3">
@@ -180,23 +190,34 @@
                     <!-- More inputs as needed -->
                 </form>
             </div>
-            <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+            <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab">
                 <!-- Content for Tab 2 -->
                 <form>
+                    
+                        <div class="col-md-2">
+                            <label for="exampleInput1" class="form-label">データNo</label>
+                            <input type="text" class="form-control" id="exampleInput1">
+                        </div>
+
                     <div class="mb-3">
-                        <label for="exampleInput3" class="form-label">Example input 9</label>
+                        <label for="exampleInput3" class="form-label">出荷日</label>
                         <input type="text" class="form-control" id="exampleInput3">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInput4" class="form-label">Example input 10</label>
+                        <label for="exampleInput4" class="form-label">出荷数</label>
                         <input type="text" class="form-control" id="exampleInput4">
                     </div>
                     <!-- More inputs as needed -->
                 </form>
             </div>
-            <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+            <div class="tab-pane fade" id="tab6" role="tabpanel" aria-labelledby="tab6-tab">
                 <!-- Content for Tab 2 -->
                 <form>
+                        <div class="col-md-2">
+                            <label for="exampleInput1" class="form-label">データNo</label>
+                            <input type="text" class="form-control" id="exampleInput1">
+                        </div>
+
                     <div class="mb-3">
                         <label for="exampleInput3" class="form-label">Example input 11</label>
                         <input type="text" class="form-control" id="exampleInput3">
