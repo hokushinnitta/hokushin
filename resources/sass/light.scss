@@ -1,0 +1,59 @@
+// light.scss
+
+// Import Bootstrap functions and variables
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+// Import custom variables
+@import "variables";
+
+// Light mode styles
+body[data-bs-theme="light"] {
+  --bs-body-color: #{$body-color-light};
+  --bs-body-bg: #{$body-bg-light};
+  --bs-primary: #{$primary-light};
+  --bs-secondary: #{$secondary-light};
+  --bs-success: #{$success-light};
+  --bs-info: #{$info-light};
+  --bs-warning: #{$warning-light};
+  --bs-danger: #{$danger-light};
+  --bs-light: #{$light-light};
+  --bs-dark: #{$dark-light};
+  --bs-border-color: #{$input-border-color-light};
+  --bs-btn-bg: #{$btn-bg-light};
+  --bs-btn-hover-bg: #{$btn-hover-bg-light};
+  --bs-btn-border-color: #{$btn-border-color-light};
+
+  // Navbar
+  .navbar {
+    background-color: var(--bs-body-bg);
+    .navbar-brand {
+      color: var(--bs-primary);
+    }
+    .navbar-nav .nav-link {
+      color: var(--bs-body-color);
+      &:hover {
+        color: var(--bs-primary);
+      }
+    }
+  }
+
+  // Buttons
+  .btn-primary {
+    background-color: var(--bs-btn-bg);
+    border-color: var(--bs-btn-border-color);
+    &:hover {
+      background-color: var(--bs-btn-hover-bg);
+    }
+  }
+
+  // Form controls
+  .form-control {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: var(--bs-border-color);
+  }
+
+  // Add other component customizations as needed
+}

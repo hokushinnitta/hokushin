@@ -1,0 +1,114 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Import Bootstrap functions and variables
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+@import "node_modules/bootstrap/scss/utilities";
+
+
+
+// Import variables
+@import 'variables';
+@import 'bootstrap/scss/bootstrap';
+// Import mixins
+@import 'mixins';
+
+// Import light mode styles
+@import 'light';
+
+// Import dark mode styles
+@import 'dark';
+
+// Include any other styles
+// Light mode styles
+[data-bs-theme="light"] {
+    --bs-body-bg: var(--light-body-bg);
+    --bs-body-color: var(--light-body-color);
+    --bs-primary: var(--light-primary);
+    --bs-secondary: var(--light-secondary);
+    --bs-success: var(--light-success);
+    --bs-info: var(--light-info);
+    --bs-warning: var(--light-warning);
+    --bs-danger: var(--light-danger);
+    --bs-light: var(--light-light);
+    --bs-dark: var(--light-dark);
+    --bs-border-color: var(--light-border-color);
+    --bs-btn-bg: var(--light-btn-bg);
+    --bs-btn-border-color: var(--light-btn-border-color);
+    --bs-btn-hover-bg: var(--light-btn-hover-bg);
+  }
+  
+  // Dark mode styles
+  [data-bs-theme="dark"] {
+    --bs-body-bg: var(--dark-body-bg);
+    --bs-body-color: var(--dark-body-color);
+    --bs-primary: var(--dark-primary);
+    --bs-secondary: var(--dark-secondary);
+    --bs-success: var(--dark-success);
+    --bs-info: var(--dark-info);
+    --bs-warning: var(--dark-warning);
+    --bs-danger: var(--dark-danger);
+    --bs-light: var(--dark-light);
+    --bs-dark: var(--dark-dark);
+    --bs-border-color: var(--dark-border-color);
+    --bs-btn-bg: var(--dark-btn-bg);
+    --bs-btn-border-color: var(--dark-btn-border-color);
+    --bs-btn-hover-bg: var(--dark-btn-hover-bg);
+  }
+// Light mode
+:root {
+    --bs-body-bg: #ffffff;
+    --bs-body-color: #000000;
+    --bs-primary: #007bff;
+    // 他のライトモード用の変数をここに追加
+  }
+  
+  // Dark mode
+  [data-bs-theme="dark"] {
+    --bs-body-bg: #000000;
+    --bs-body-color: #ffffff;
+    --bs-primary: #375a7f;
+    // 他のダークモード用の変数をここに追加
+  }
+
+// Main application styles
+body {
+  font-family: $font-family-sans-serif;
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+}
+
+// Navbar styles
+.navbar {
+  background-color: var(--bs-body-bg);
+  .navbar-brand {
+    color: var(--bs-primary);
+  }
+  .navbar-nav .nav-link {
+    color: var(--bs-body-color);
+    &:hover {
+      color: var(--bs-primary);
+    }
+  }
+}
+
+// Button styles
+.btn-primary {
+  background-color: var(--bs-btn-bg);
+  border-color: var(--bs-btn-border-color);
+  &:hover {
+    background-color: var(--bs-btn-hover-bg);
+  }
+}
+
+// Form control styles
+.form-control {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: var(--bs-border-color);
+}
+
+// Additional styles as needed
+

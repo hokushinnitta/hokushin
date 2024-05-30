@@ -1,0 +1,22 @@
+{
+  "resources/js/app.js": {
+    "file": "assets/app-CF7DVeNZ.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "resources/js/theme-toggle.js"
+    ]
+  },
+  "resources/js/theme-toggle.js": {
+    "file": "assets/theme-toggle-CDNtJ4sg.js",
+    "name": "theme-toggle",
+    "src": "resources/js/theme-toggle.js",
+    "isEntry": true
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app-9kx3olKa.css",
+    "src": "resources/sass/app.scss",
+    "isEntry": true
+  }
+}

@@ -1,0 +1,56 @@
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// _variables.scss
+
+// Primary theme colors
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+);
+
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$key");
+
+
+// Light mode variables
+$body-color-light: #212529;
+$body-bg-light: #ffffff;
+$primary-light: #0d6efd;
+$secondary-light: #6c757d;
+$success-light: #198754;
+$info-light: #0dcaf0;
+$warning-light: #ffc107;
+$danger-light: #dc3545;
+$light-light: #f8f9fa;
+$dark-light: #343a40;
+$input-border-color-light: #ced4da;
+$btn-bg-light: $primary-light;
+$btn-hover-bg-light: darken($primary-light, 10%);
+$btn-border-color-light: darken($primary-light, 15%);
+
+// Dark mode variables
+$body-color-dark: #ffffff;
+$body-bg-dark: #212529;
+$primary-dark: #0d6efd;
+$secondary-dark: #6c757d;
+$success-dark: #198754;
+$info-dark: #0dcaf0;
+$warning-dark: #ffc107;
+$danger-dark: #dc3545;
+$light-dark: #343a40;
+$dark-dark: #f8f9fa;
+$input-border-color-dark: #495057;
+$btn-bg-dark: $primary-dark;
+$btn-hover-bg-dark: lighten($primary-dark, 10%);
+$btn-border-color-dark: lighten($primary-dark, 15%);

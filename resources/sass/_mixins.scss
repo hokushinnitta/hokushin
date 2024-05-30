@@ -1,0 +1,67 @@
+// Import Bootstrap mixins
+@import "node_modules/bootstrap/scss/mixins";
+
+// Custom mixins
+@mixin theme-colors($theme-colors) {
+  @each $color, $value in $theme-colors {
+    .text-#{$color} {
+      color: $value !important;
+    }
+    .bg-#{$color} {
+      background-color: $value !important;
+    }
+    .border-#{$color} {
+      border-color: $value !important;
+    }
+  }
+}
+
+// Mixin for dark mode
+@mixin dark-mode {
+  --bs-body-bg: var(--bs-dark-body-bg);
+  --bs-body-color: var(--bs-dark-body-color);
+  --bs-primary: var(--bs-dark-primary);
+  --bs-secondary: var(--bs-dark-secondary);
+  --bs-success: var(--bs-dark-success);
+  --bs-info: var(--bs-dark-info);
+  --bs-warning: var(--bs-dark-warning);
+  --bs-danger: var(--bs-dark-danger);
+  --bs-light: var(--bs-dark-light);
+  --bs-dark: var(--bs-dark-dark);
+  --bs-border-color: var(--bs-dark-border-color);
+  --bs-btn-bg: var(--bs-dark-btn-bg);
+  --bs-btn-border-color: var(--bs-dark-btn-border-color);
+  --bs-btn-hover-bg: var(--bs-dark-btn-hover-bg);
+}
+
+// Mixin for light mode
+@mixin light-mode {
+  --bs-body-bg: var(--bs-light-body-bg);
+  --bs-body-color: var(--bs-light-body-color);
+  --bs-primary: var(--bs-light-primary);
+  --bs-secondary: var(--bs-light-secondary);
+  --bs-success: var(--bs-light-success);
+  --bs-info: var(--bs-light-info);
+  --bs-warning: var(--bs-light-warning);
+  --bs-danger: var(--bs-light-danger);
+  --bs-light: var(--bs-light-light);
+  --bs-dark: var(--bs-light-dark);
+  --bs-border-color: var(--bs-light-border-color);
+  --bs-btn-bg: var(--bs-light-btn-bg);
+  --bs-btn-border-color: var(--bs-light-btn-border-color);
+  --bs-btn-hover-bg: var(--bs-light-btn-hover-bg);
+}
+
+// Mixin for applying color scheme
+@mixin apply-color-scheme($scheme) {
+  @if $scheme == "dark" {
+    @include dark-mode;
+  } @else if $scheme == "light" {
+    @include light-mode;
+  } @else {
+    // Apply custom color scheme
+    @each $color, $value in $scheme {
+      --bs-#{$color}: #{$value};
+    }
+  }
+}
