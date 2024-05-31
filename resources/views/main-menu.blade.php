@@ -19,9 +19,9 @@
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="tab5-tab" data-bs-toggle="tab" data-bs-target="#tab5" type="button" role="tab" aria-controls="tab5" aria-selected="false">出荷処理</button>
             </li>
-            <li class="nav-item" role="presentation">
+            <!-- <li class="nav-item" role="presentation">
                 <button class="nav-link" id="tab6-tab" data-bs-toggle="tab" data-bs-target="#tab6" type="button" role="tab" aria-controls="tab6" aria-selected="false">出荷処理</button>
-            </li>
+            </li> -->
 
             <!-- More tabs as needed -->
         </ul>
@@ -86,20 +86,43 @@
                             <input type="text" class="form-control" id="exampleInput2">
                         </div>
                     </div>
-                    <!-- <div class="row">
+                    <div class="row">
                         <div class="col-md-2">
-                            <label for="exampleInput2" class="form-label">ロット数</label>
+                            <label for="exampleInput2" class="form-label">寸法</label>
                             <input type="text" class="form-control" id="exampleInput2">
                         </div>
                         <div class="col-md-2">
-                            <label for="exampleInput2" class="form-label">受注数量</label>
+                            <label for="exampleInput2" class="form-label">現場指示日</label>
                             <input type="text" class="form-control" id="exampleInput2">
                         </div>
                         <div class="col-md-2">
-                            <label for="exampleInput2" class="form-label">納期</label>
+                            <label for="exampleInput2" class="form-label">工程数</label>
                             <input type="text" class="form-control" id="exampleInput2">
                         </div>
-                    </div> -->
+                        <div class="col-md-2">
+                            <label for="exampleInput2" class="form-label">ショット数</label>
+                            <input type="text" class="form-control" id="exampleInput2">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label for="exampleInput2" class="form-label">材料入荷予定日１</label>
+                            <input type="text" class="form-control" id="exampleInput2">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="exampleInput2" class="form-label">材料入荷予定日２</label>
+                            <input type="text" class="form-control" id="exampleInput2">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="exampleInput2" class="form-label">材料入荷予定日３</label>
+                            <input type="text" class="form-control" id="exampleInput2">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="exampleInput2" class="form-label">備考</label>
+                            <input type="text" class="form-control" id="exampleInput2">
+                        </div>
+                    </div>
+
 
                     <!-- More inputs as needed -->
                 </form>
