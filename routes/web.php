@@ -45,6 +45,8 @@ Route::post('/color-settings/toggle-theme', [ColorSettingsController::class, 'to
 Route::get('/api/get-color-settings', [ColorSettingsController::class, 'getColorSettings']);
 
 // ユーザー登録用
-Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
-Route::post('/users', [UserController::class, 'store'])->name('users.store');
 
+
+Route::get('/admin-menu', function () {return view('admin-menu');})->name('admin-menu');
+
+Route::post('/users', [UserController::class, 'store'])->name('users.store');

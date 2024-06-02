@@ -29,7 +29,7 @@
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
                 <!-- Content for Tab 1 -->
-                <form>
+                <form action="{{ route('users.store') }}" method="POST">
 
                 <div class="container">
                     <h2>Create New User</h2>
@@ -52,8 +52,7 @@
             </ul>
         </div>
     @endif
-
-    <form action="{{ route('users.store') }}" method="POST">
+    <!-- <form action="{{ route('users.store') }}" method="POST"> -->
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
@@ -61,15 +60,15 @@
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+            <input type="email" class="form-control" id="email" name="email" autocomplete="new-email" required>
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" name="password" required>
+            <input type="password" class="form-control" id="password" name="password" autocomplete="new-password" required>
         </div>
         <div class="mb-3">
             <label for="password_confirmation" class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
+            <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" autocomplete="new-password" required>
         </div>
         <button type="submit" class="btn btn-primary">Create User</button>
     </form>
@@ -337,4 +336,9 @@
             <button type="button" class="btn btn-secondary">修正</button>
         </div>
     </div>
+    <script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        console.log('Form is being submitted');
+    });
+</script>
 @endsection
