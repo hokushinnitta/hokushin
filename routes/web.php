@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
@@ -43,4 +44,7 @@ Route::post('/color-settings/toggle-theme', [ColorSettingsController::class, 'to
 
 Route::get('/api/get-color-settings', [ColorSettingsController::class, 'getColorSettings']);
 
+// ユーザー登録用
+Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+Route::post('/users', [UserController::class, 'store'])->name('users.store');
 

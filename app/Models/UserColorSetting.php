@@ -11,3 +11,5 @@ class UserColorSetting extends Model
 
     protected $fillable = ['user_id', 'mode', 'name', 'value'];
 }
+
+
