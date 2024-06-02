@@ -15,10 +15,14 @@ Auth::routes();
 // ユーザーがログインした後のリダイレクト先
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// special-menu と main-menu のルート
+// special-menu と admin-menu と　main-menu のルート
 Route::get('/special-menu', function () {
     return view('special-menu');
 })->name('special-menu')->middleware('auth');
+
+Route::get('/admin-menu', function () {
+    return view('admin-menu');
+})->name('admin-menu')->middleware('auth');
 
 Route::get('/main-menu', function () {
     return view('main-menu');

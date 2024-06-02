@@ -16,8 +16,10 @@ class LoginController extends Controller
        {
            if ($user->name === 'runfree_admin') {
                return redirect('/special-menu');
+           } elseif ($user->name === 'admin'){
+               return redirect('/admin-menu');
            } else {
-               return redirect('/main-menu');
+            return redirect('/main-menu');
            }
        }
 
