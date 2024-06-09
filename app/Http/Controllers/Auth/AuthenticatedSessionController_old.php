@@ -1,5 +1,7 @@
 <?php
 
+// app/Http/Controllers/Auth/AuthenticatedSessionController.php
+
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -8,6 +10,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use App\Providers\RouteServiceProvider;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -21,6 +24,8 @@ class AuthenticatedSessionController extends Controller
 
     /**
      * Handle an incoming authentication request.
+     *
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function store(LoginRequest $request): RedirectResponse
     {
@@ -28,7 +33,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     /**

@@ -2,46 +2,60 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
-    public function create()
-    {
-        return view('users.create');
-    }
-
     public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
-        ], [
-            'name.required' => 'Name is required',
-            'email.required' => 'Email is required',
-            'email.unique' => 'This email is already taken',
-            'password.required' => 'Password is required',
-            'password.confirmed' => 'Passwords do not match',
+            'role' => 'required|string|exists:roles,name',
         ]);
 
-        try {
-            \DB::transaction(function () use ($request) {
-                $user = new User([
-                    'name' => $request->name,
-                    'email' => $request->email,
-                    'password' => Hash::make($request->password),
-                ]);
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
-                $user->save();
-            });
+        $user->assignRole($request->role);
 
-            return redirect()->route('admin-menu')->with('success', 'User created successfully.');
-
-        } catch (\Exception $e) {
-            return redirect()->route('admin-menu')->with('error', 'An error occurred while creating the user.');
-        }
+        return redirect()->back()->with('success', 'ユーザーが登録されました');
     }
+
+    /**
+ * ユーザー情報を更新する
+ */
+public function update(Request $request, $id)
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:users,email,' . $id,
+        'password' => 'nullable|string|min:8|confirmed',
+        'role' => 'required|string|in:admin,user',
+    ]);
+
+    $user = User::findOrFail($id);
+    $user->name = $request->name;
+    $user->email = $request->email;
+
+    if ($request->filled('password')) {
+        $user->password = Hash::make($request->password);
+    }
+
+    $role = Role::findByName($request->role);
+    $user->syncRoles($role);
+
+    $user->save();
+
+    return redirect()->route('dashboard')->with('success', 'ユーザー情報が正常に更新されました。');
 }
+
+}
+
