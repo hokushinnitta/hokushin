@@ -4,28 +4,38 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
         $user = Auth::user();
-        return view('dashboard', compact('user'));
-    }
+        Log::info('User retrieved', ['user' => $user]);
 
+        try {
+            $roles = $user->getRoleNames(); // ロール名を取得
+            Log::info('User roles', ['roles' => $roles]);
+
+            if ($user->hasRole('admin')) {
+                Log::info('Redirecting to admin menu');
+                return redirect()->route('admin.menu');
+            } elseif ($user->hasRole('user')) {
+                Log::info('Redirecting to user menu');
+                return redirect()->route('user.menu');
+            } else {
+                Log::info('No matching roles found');
+            }
+        } catch (\Exception $e) {
+            Log::error('Error checking roles or redirecting', ['error' => $e->getMessage()]);
+            return response()->view('errors.custom', [], 500);
+        }
+
+        return view('dashboard');
+    }
 }

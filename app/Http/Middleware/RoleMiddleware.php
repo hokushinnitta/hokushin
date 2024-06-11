@@ -1,12 +1,11 @@
 <?php
 
-// app/Http/Middleware/RoleMiddleware.php
-
 namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class RoleMiddleware
 {
@@ -17,8 +16,11 @@ class RoleMiddleware
         }
 
         $user = Auth::user();
-        if ($user->role !== $role) {
-            return redirect('/home'); // 役割が一致しない場合はホームページにリダイレクト
+        Log::info('RoleMiddleware check', ['user_id' => $user->id, 'user_roles' => $user->getRoleNames(), 'required_role' => $role]);
+
+        if (!$user->hasRole($role)) {
+            Log::info('Role does not match', ['user_roles' => $user->getRoleNames(), 'required_role' => $role]);
+            return redirect('/dashboard'); // 役割が一致しない場合はダッシュボードにリダイレクト
         }
 
         return $next($request);
